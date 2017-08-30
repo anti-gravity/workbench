@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 
 const App = ({ stories, activeStory, onSelectStory }) => {
+  const activeStoryComponent = _.find(stories, { name: activeStory }).Component
   return (
     <div style={{ width: '100vw', height: '100vh', background: '#fafafa', display: 'flex' }}>
       <div style={{ width: 250, background: '#fff' }}>
@@ -12,7 +13,7 @@ const App = ({ stories, activeStory, onSelectStory }) => {
 
       <div style={{ flex: 1, display: 'flex' }}>
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          { _.find(stories, { name: activeStory }).Component() }
+          <activeStoryComponent/>
         </div>
       </div>
 

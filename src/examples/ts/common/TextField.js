@@ -1,0 +1,2 @@
+import * as React from 'react';
+export const TextField = ({ onChange, value, type = "text", placeholder = "", required = false, style = {} }) => (<input type={type} placeholder={placeholder} required={required} onChange={onChange} value={value} style={Object.assign({ paddingLeft: 16, paddingRight: 16, width: 340, height: 50, borderRadius: 2, border: "0.9px #C6C6C6 solid", fontSize: 14 }, style)}></input>);

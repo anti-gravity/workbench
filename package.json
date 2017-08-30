@@ -6,17 +6,26 @@
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
     "react": "^15.6.1",
+    "react-activity": "^1.1.2",
     "react-dom": "^15.6.1",
-    "react-scripts": "^1.0.0"
+    "react-redux": "^5.0.6",
+    "react-scripts": "^1.0.0",
+    "redux": "^3.7.2",
+    "ts-simple-ast": "^0.57.0",
+    "typescript": "^2.4.2"
   },
   "devDependencies": {
-    "@case/eslint-config": "^0.2.0"
+    "@case/eslint-config": "^0.2.0",
+    "@types/react": "^16.0.5",
+    "babel-cli": "^6.26.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "run-ast": "babel-node src/ast.js",
+    "build-ast": "babel . -d .dist --ignore=\"node_modules\""
   },
   "eslintConfig": {
     "extends": "@case/eslint-config"
