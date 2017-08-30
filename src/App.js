@@ -3,6 +3,14 @@ import _ from 'lodash'
 
 const App = ({ stories, activeStory, onSelectStory }) => {
   const activeStoryComponent = _.find(stories, { name: activeStory }).Component
+  function renderMe(component) {
+    try { 
+      return React.createElement(component) 
+    } catch (e) {
+      console.log(e)
+      return null
+    }
+  }
   return (
     <div style={{ width: '100vw', height: '100vh', background: '#F2F7FA', display: 'flex', fontFamily: 'Roboto' }}>
       <div style={{ width: 250, display: 'flex', flexDirection: 'column' }}>
@@ -33,7 +41,7 @@ const App = ({ stories, activeStory, onSelectStory }) => {
 
       <div style={{ flex: 1, display: 'flex' }}>
         <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <activeStoryComponent/>
+          {renderMe(activeStoryComponent)}
         </div>
       </div>
 
